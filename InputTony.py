@@ -3,11 +3,14 @@ from gtts import gTTS #import du module permettant de generer la voix
 
 os.environ['http_proxy'] = 'http://55.225.55.6:3128'
 os.environ['https_proxy'] = 'http://55.225.55.6:3128'
-# Répertoire à ajouter
+# Répertoire à ajouter pour les binaires windows
 repertoire_binaires = r"C:\temp\CourTony1\bin"
 
-# Ajout au PATH pour ce script seulement
+# Ajout au PATH des binaires
 os.environ["PATH"] = repertoire_binaires + os.pathsep + os.environ["PATH"]
+
+os.system("git config --global http.proxy http://55.225.55.6:3128")
+os.system("git config --global https.proxy http://55.225.55.6:3128")
 
 # Le but etant de faire un programme qui lit a voix haute le texte entré au clavier
 # MAIS si dans le texte on detecte les mmots "bonjour", "salut", yo" et "bonsoir" le programme doit repondre
